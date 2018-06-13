@@ -8,6 +8,26 @@ var guess ;             // Geuss
 var guessedLetters = [ ]; // Stored geusses array
 var lives ;             // Lives
 var counter ;           // Count correct guesses
-var space;              // Number of spaces in word '-'
+var spaces;              // Number of spaces in word '-'
 
+//Select random word from word bank
+
+var word = wordBank[Math.floor(Math.random()*wordBank.length)];
+console.log(word);
+
+//get the length of word
+var spaces = word.length;
+console.log(spaces);
+
+//create "_" blanks 
+
+
+//collect guess from user
+
+var guess = document.getElementById("letterTxt") 
+    document.onkeyup=function(event) {
+        console.log(guess); 
+}
+
+    
 
