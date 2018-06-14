@@ -33,31 +33,52 @@ console.log(guessedLetters);
 
 var guess = document.getElementById("letterTxt") 
     document.onkeyup=function(event) {
-        guess = guess.toLowerCase();
-        console.log(guess); 
+    guess = event.key.toLowerCase();
+   
+    console.log("first guess " + guess);
+    console.log(event);
+        for (var i = 0; i <= word.length-1; i++) {
+            console.log("this is the index " + i);
+            console.log("this is the guess " + guess);
+            console.log("this is the word-char " + word.charAt(i));
+        if (word.charAt(i) === guess) {
+            guessedLetters[i] = guess;
+            console.log(guessedLetters);
+           var counter = (counter + 1);       
+           
+        }  else { 
+           lives=lives-1;  
+           wrongLetters.push(guess);
+           console.log("wrong letter");
+           console.log(lives);
+        }
+
+    }
 }
 
 
-
-for (var i = 1; i <= word.length; i++) {
-  if (word.atChar[i] === guess) {
-      var x= (i - 1);
-      guessedLetters.push[x];
-      var counter = (counter + 1);
-      if (counter === word.length) {
-        var wins = wins +1;
+        
+   
+                
+           
+           // do this outside of the loop
+                                                                  //            if (counter === word.length) {
+                                                                  //                var wins = wins +1;
         //print "You Win!!"
         //reset function   
-      } else {     
-        //print to input field the Array
-        //print "great, keep going"
-      }
-  } else {
-    var x= (i - 1);     
-    wrongLetters.push[x];
+ //        } else {     
+//                                                                       //print to input field the Array
+                                                        //                    //print "great, keep going
+//                    console.log("didnt match");
+                                                        //                if (lives>0)  {
+                                                        //                       wrongLetters.push(guess);
+                                                        //                    console.log(wrongLetters);
+//                    lives= lives - 1;
+//                } else {
+//                Losses = losses + 1;
+//                     console.log("added to losses");
+//            }
     
-    // 
-}
 
 
 //}
