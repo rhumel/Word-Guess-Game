@@ -6,9 +6,12 @@ var wordBank = ["sofa","sunglasses", "lotion", "sunscreen", "beach", "water", "s
 var word ;              // Selected word
 var guess ;             // Geuss
 var guessedLetters = [ ]; // Stored geusses array
-var lives ;             // Lives
-var counter ;           // Count correct guesses
+var lives = 6 ;             // Lives
+var counter = 0 ;           // Count correct guesses
 var spaces;              // Number of spaces in word '-'
+var wrongLetters = [];   //wrong guess 
+var wins = 0 ;             //wins
+var losses = 0 ;           //loses 
 
 //Select random word from word bank
 
@@ -20,14 +23,42 @@ var spaces = word.length;
 console.log(spaces);
 
 //create "_" blanks 
-
+for (var i =0; i <word.length; i++) {
+    guessedLetters.push("_");
+    
+}
+console.log(guessedLetters);
 
 //collect guess from user
 
 var guess = document.getElementById("letterTxt") 
     document.onkeyup=function(event) {
+        guess = guess.toLowerCase();
         console.log(guess); 
 }
 
+
+
+for (var i = 1; i <= word.length; i++) {
+  if (word.atChar[i] === guess) {
+      var x= (i - 1);
+      guessedLetters.push[x];
+      var counter = (counter + 1);
+      if (counter === word.length) {
+        var wins = wins +1;
+        //print "You Win!!"
+        //reset function   
+      } else {     
+        //print to input field the Array
+        //print "great, keep going"
+      }
+  } else {
+    var x= (i - 1);     
+    wrongLetters.push[x];
     
+    // 
+}
+
+
+//}
 
