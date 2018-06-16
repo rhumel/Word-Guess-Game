@@ -31,17 +31,10 @@ font-family: creepster;
 font-size:80px;
 }
 
-/*#myWins,
-#winTxt,
-#myLosses,
-#lossesTxt,
-#myLastWord,
-#lastWordTxt 
-.container*/ 
 
 #wins {    
 position: absolute;
-top:200px;    
+top:250px;    
 text-align:left;
 font-size:20px;
 height: 100px;
@@ -50,7 +43,7 @@ width: 100px;
 
 #losses {    
     position: absolute;  
-    top: 300px;  
+    top: 350px;  
     text-align:left;
     font-size:20px;
     height: 100px;
@@ -59,7 +52,7 @@ width: 100px;
 
 #lastWord {    
     position: absolute;  
-    top: 400px;  
+    top: 450px;  
     text-align:left;
     font-size:20px;
     height: 100px;
@@ -87,6 +80,15 @@ margin-top:30px;
     h2 {
         font-size: 60px;
        } 
+
+    #wordTxt {
+        font-size:50px;
+      
+        }   
+    #mylives{
+            font-size:20px;
+          
+            }       
     }
   @media screen and (max-width: 640px) {
     
@@ -94,4 +96,16 @@ margin-top:30px;
     h2 {
         font-size: 60px;
        } 
+
+    #wordTxt,
+    #wins,
+    #losses,
+    #lastWord {
+        font-size:20px;
+      
+        }    
+    #mylives{
+            font-size:20px;
+              
+            }          
     }
