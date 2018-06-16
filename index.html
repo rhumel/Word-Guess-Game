@@ -11,26 +11,24 @@
 <body>
     <div class="wrapper">
         <h1>Hangman</h1>
-         <h2>Can You guess the word in time?</h2>
+         <h2>Can you guess the word in time?</h2>
          
     </div>
      <div class="wrapper">
-         <div id="wrongLetter">
-         </div>  
-        
-         <p id="myWins">Wins</p>
+          
+         <p id="myWins">Wins</p> 
+         <div id="winTxt"></div>
          <p id="myLosses">Losses</p>
-         <p id="mylives">Guesses Remaining</p>
+         <div id="lossesTxt"></div>
+         <p id="mylives">Guesses Remaining</p> 
+         <div id="livesTxt"></div>
+         <div id="myWord"></div>
+         <div id="wordTxt"></div>
+         <div id="wrongLetter">Already used </div> 
+         <div id="wrongTxt"></div>
      </div>
-     <div class="container">
-        <div id="letterTxt">
-            <input> 
-        </div>
-    </div>   
-         <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-         <div class="container">
-           <button id="reset">Play again</button>
-         </div>
+     
+        
      </div>
      
      <script src="./assets/javascript/game.js"></script>
