@@ -13,28 +13,29 @@ var wrongLetters = [];   //wrong guess
 var wins = 0;             //wins
 var losses = 0;           //loses 
 var letterExist = false;  //check to see 
-var lastWord = ""
+var lastWord = "";
+var wrongLetterIndex ;
 
 //Select random word from word bank
 
 function resestGame() {
-// Set aside previous word
-    lastWord=word;
-//random word
+    // Set aside previous word
+    lastWord = word;
+    //random word
     word = wordBank[Math.floor(Math.random() * wordBank.length)];
-   
-//reset counter
+
+    //reset counter
     lives = 6;
     counter = 0;
     guessedLetters = []
     wrongLetters = []
 
-//create "_" blanks 
+    //create "_" blanks 
     for (var i = 0; i < word.length; i++) {
         guessedLetters.push("_");
     }
 
-// prints the counters to the screen    
+    // prints the counters to the screen    
     renderHtml();
 }
 
@@ -45,13 +46,12 @@ resestGame();
 
 //collect guess from user and make it lower case
 
-//var guess = document.getElementById("letterTxt")    
 var guess;
 document.onkeyup = function (event) {
     guess = event.key.toLowerCase();
 
     for (var i = 0; i <= word.length - 1; i++) {
-        
+
         if (word.charAt(i) === guess) {
             guessedLetters[i] = guess;
             counter++;
@@ -61,16 +61,22 @@ document.onkeyup = function (event) {
     }
 
 
-    if (letterExist === true) {
 
-        letterExist = false
-        renderHtml();
-        
+  if (letterExist === true) {
+      letterExist = false;
+      renderHtml();
     } else {
-        lives--;
-        wrongLetters.push(guess);
-        renderHtml();
+     //verify if the letter haas been used
+      wrongLetterIndex = (wrongLetters.indexOf(guess));
+        if (wrongLetterIndex === (-1)) {
+            wrongLetters.push(guess);
+            lives--;  
+            renderHtml();  
+       } else {
+          alert("You have already tried "+ guess);
+        }
     }
+
 
     if (counter === word.length) {
         wins++;
@@ -81,7 +87,7 @@ document.onkeyup = function (event) {
 
         losses++;
         resestGame();
-        
+
     }
 
 }
