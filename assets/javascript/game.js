@@ -14,7 +14,8 @@ var wins = 0;             //wins
 var losses = 0;           //loses 
 var letterExist = false;  //check to see 
 var lastWord = "";
-var wrongLetterIndex ;
+var wrongLetterIndex;
+var dupGuess = false;
 
 //Select random word from word bank
 
@@ -50,30 +51,41 @@ var guess;
 document.onkeyup = function (event) {
     guess = event.key.toLowerCase();
 
-    for (var i = 0; i <= word.length - 1; i++) {
+    //checks for to see if the letter has already been entered
 
-        if (word.charAt(i) === guess) {
-            guessedLetters[i] = guess;
-            counter++;
-            letterExist = true;
+    wrongLetterIndex = (wrongLetters.indexOf(guess));
 
+    if (wrongLetterIndex === (-1)) {
+        wrongLetters.push(guess);
+        // if it is not a dup letter then run thru loop for matching letter
+        for (var i = 0; i <= word.length - 1; i++) {
+
+            if (word.charAt(i) === guess) {
+                guessedLetters[i] = guess;
+                counter++;
+                letterExist = true;
+
+            }
         }
+    } else { //let was a dup.  set flag to be checked later. Send alert.
+        dupGuess = true;
+        alert("You have already tried " + guess);
     }
 
 
-
-  if (letterExist === true) {
-      letterExist = false;
-      renderHtml();
+    if (letterExist === true) {
+        letterExist = false;
+        renderHtml();
     } else {
-     //verify if the letter haas been used
-      wrongLetterIndex = (wrongLetters.indexOf(guess));
-        if (wrongLetterIndex === (-1)) {
-            wrongLetters.push(guess);
-            lives--;  
-            renderHtml();  
-       } else {
-          alert("You have already tried "+ guess);
+        //if letter in NOT a dup, then subtract a life
+        if (dupGuess === false) {
+            lives--;
+            renderHtml();
+
+        } else {
+            // set flag back to no dup Key
+            dupGuess = false;
+
         }
     }
 
