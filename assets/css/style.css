@@ -16,7 +16,8 @@ body {
     line-height: 30px;
     background-size: auto;
     height: 100%; 
-    text-align: center;
+    text-align: center; 
+    color: cornsilk;
 }
 
 h1 {
@@ -30,8 +31,46 @@ font-family: creepster;
 font-size:80px;
 }
 
+/*#myWins,
+#winTxt,
+#myLosses,
+#lossesTxt,
+#myLastWord,
+#lastWordTxt 
+.container*/ 
+
+#wins {    
+position: absolute;
+top:200px;    
+text-align:left;
+font-size:20px;
+height: 100px;
+width: 100px;
+}
+
+#losses {    
+    position: absolute;  
+    top: 300px;  
+    text-align:left;
+    font-size:20px;
+    height: 100px;
+    width: 100px;
+    }
+
+#lastWord {    
+    position: absolute;  
+    top: 400px;  
+    text-align:left;
+    font-size:20px;
+    height: 100px;
+    width: 100px;
+        }    
+
 #wordTxt {
 font-size:70px;
 margin-bottom: 25px;
+}
 
+#wrongLetter {
+margin-top:30px;    
 }
