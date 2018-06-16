@@ -82,7 +82,6 @@ document.onkeyup = function (event) {
     if (counter === word.length) {
         wins++;
         resestGame();
-        //reset function
 
         console.log(wins);
 
@@ -91,7 +90,7 @@ document.onkeyup = function (event) {
 
         losses++;
         resestGame();
-        //reset
+        
     }
 
 }
